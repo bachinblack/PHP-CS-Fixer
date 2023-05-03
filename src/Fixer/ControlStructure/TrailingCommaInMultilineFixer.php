@@ -102,6 +102,14 @@ final class TrailingCommaInMultilineFixer extends AbstractFixer implements Confi
         return $tokens->isAnyTokenKindsFound([T_ARRAY, CT::T_ARRAY_SQUARE_BRACE_OPEN, '(', CT::T_DESTRUCTURING_SQUARE_BRACE_OPEN]);
     }
 
+    /**
+     * Must run after MultilineLongArrayFixer.
+     */
+    public function getPriority(): int
+    {
+        return 0;
+    }
+
     protected function createConfigurationDefinition(): FixerConfigurationResolverInterface
     {
         return new FixerConfigurationResolver([
