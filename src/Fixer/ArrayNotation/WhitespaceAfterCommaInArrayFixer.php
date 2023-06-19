@@ -62,6 +62,8 @@ final class WhitespaceAfterCommaInArrayFixer extends AbstractFixer implements Co
     }
 
     /**
+     * {@inheritdoc}
+     *
      * Must run after MultilineLongArrayFixer.
      */
     public function getPriority(): int
